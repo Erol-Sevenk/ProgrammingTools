@@ -1,4 +1,4 @@
-namespace ProgrammingTools.Models;
+namespace ErasmusMate.Models;
 
 public class ErrorViewModel
 {

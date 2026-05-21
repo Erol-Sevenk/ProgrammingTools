@@ -1,0 +1,80 @@
+@model IEnumerable<ErasmusMate.Models.Course>
+
+@{
+    ViewData["Title"] = "Course Matching";
+}
+
+<div class="container mt-4">
+    <h2>📚 Course Matching & ECTS Tracker</h2>
+    <p class="text-muted">Manage your Learning Agreement courses here.</p>
+
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <form asp-controller="Courses" asp-action="AddCourse" method="post" class="row g-3 align-items-end">
+                <div class="col-md-4">
+                    <label class="form-label fw-bold">Host University Course</label>
+                    <input type="text" name="hostCourseName" class="form-control" placeholder="e.g. Programming Tools" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-bold">Home University Course</label>
+                    <input type="text" name="homeCourseName" class="form-control" placeholder="e.g. Yazılım Araçları" required>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label fw-bold">ECTS</label>
+                    <input type="number" name="ects" class="form-control" placeholder="e.g. 5" required min="1">
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary w-100">Add Course</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table class="table table-hover table-bordered bg-white shadow-sm text-center align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>Host University Course</th>
+                <th>Home University Course</th>
+                <th>ECTS</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.HostCourseName</td>
+                    <td>@item.HomeCourseName</td>
+                    <td><span class="badge bg-secondary">@item.Ects ECTS</span></td>
+                    <td>
+                        @if (item.IsApproved)
+                        {
+                            <span class="badge bg-success">Approved</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-warning text-dark">Pending</span>
+                        }
+                    </td>
+                    <td>
+                        <form asp-controller="Courses" asp-action="Delete" asp-route-id="@item.Id" method="post">
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">No courses added yet. Start building your Learning Agreement!</div>
+    }
+    else
+    {
+        <div class="alert alert-dark text-end fs-5">
+            <strong>Total ECTS: @Model.Sum(c => c.Ects)</strong>
+        </div>
+    }
+</div>

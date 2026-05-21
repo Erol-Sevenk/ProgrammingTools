@@ -2,7 +2,53 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mt-5">
+    <h1 class="display-4 fw-bold text-primary">Welcome to ErasmusMate! 🌍</h1>
+    <p class="lead text-secondary mt-3">Your ultimate companion for managing your exchange semester.</p>
+</div>
+
+<div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0 bg-light hover-shadow">
+            <div class="card-body text-center p-4">
+                <h1 class="display-5 mb-3">✅</h1>
+                <h4 class="card-title fw-bold">My Checklist</h4>
+                <p class="card-text text-muted">Keep track of your Learning Agreements, visa processes, and mandatory documents.</p>
+                <a asp-controller="Tasks" asp-action="Index" class="btn btn-outline-primary mt-2">Manage Tasks</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0 bg-light">
+            <div class="card-body text-center p-4">
+                <h1 class="display-5 mb-3">📚</h1>
+                <h4 class="card-title fw-bold">Course Matching</h4>
+                <p class="card-text text-muted">Sync your host university courses with your home university and calculate ECTS.</p>
+                <a asp-controller="Courses" asp-action="Index" class="btn btn-outline-primary mt-2">View Courses</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0 bg-light">
+            <div class="card-body text-center p-4">
+                <h1 class="display-5 mb-3">🏠</h1>
+                <h4 class="card-title fw-bold">Accommodation</h4>
+                <p class="card-text text-muted">Find or share dormitories, shared flats, and rooms in your new city.</p>
+                <a asp-controller="Accommodations" asp-action="Index" class="btn btn-outline-primary mt-2">Find a Place</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0 bg-light">
+            <div class="card-body text-center p-4">
+                <h1 class="display-5 mb-3">💬</h1>
+                <h4 class="card-title fw-bold">Q&A Forum</h4>
+                <p class="card-text text-muted">Connect with other exchange students, ask questions, and share travel tips.</p>
+                <a asp-controller="Forum" asp-action="Index" class="btn btn-outline-primary mt-2">Join Discussion</a>
+            </div>
+        </div>
+    </div>
 </div>

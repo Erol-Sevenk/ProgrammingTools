@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using ProgrammingTools.Models;
+using ErasmusMate.Models;
 
-namespace ProgrammingTools.Controllers;
+namespace ErasmusMate.Controllers;
 
 public class HomeController : Controller
 {

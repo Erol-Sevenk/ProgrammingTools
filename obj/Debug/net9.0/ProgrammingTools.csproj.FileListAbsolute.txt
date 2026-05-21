@@ -1,0 +1,9 @@
+C:\Users\erols\OneDrive\Masaüstü\Github-Teslim\pogramminTools\ProgrammingTools\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\erols\OneDrive\Masaüstü\Github-Teslim\pogramminTools\ProgrammingTools\obj\Debug\net9.0\ProgrammingTools.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erols\OneDrive\Masaüstü\Github-Teslim\pogramminTools\ProgrammingTools\obj\Debug\net9.0\ProgrammingTools.AssemblyInfoInputs.cache
+C:\Users\erols\OneDrive\Masaüstü\Github-Teslim\pogramminTools\ProgrammingTools\obj\Debug\net9.0\ProgrammingTools.AssemblyInfo.cs
+C:\Users\erols\OneDrive\Masaüstü\Github-Teslim\pogramminTools\ProgrammingTools\obj\Debug\net9.0\ProgrammingTools.csproj.CoreCompileInputs.cache
+C:\Users\erols\OneDrive\Masaüstü\Github-Teslim\pogramminTools\ProgrammingTools\obj\Debug\net9.0\ProgrammingTools.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\erols\OneDrive\Masaüstü\Github-Teslim\pogramminTools\ProgrammingTools\obj\Debug\net9.0\ProgrammingTools.RazorAssemblyInfo.cache
+C:\Users\erols\OneDrive\Masaüstü\Github-Teslim\pogramminTools\ProgrammingTools\obj\Debug\net9.0\ProgrammingTools.RazorAssemblyInfo.cs
+C:\Users\erols\OneDrive\Masaüstü\Github-Teslim\pogramminTools\ProgrammingTools\obj\Debug\net9.0\ProgrammingTools.sourcelink.json

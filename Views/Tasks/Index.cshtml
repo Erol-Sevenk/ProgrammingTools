@@ -1,0 +1,36 @@
+@model IEnumerable<ErasmusMate.Models.ErasmusTask>
+
+@{
+    ViewData["Title"] = "My Erasmus Checklist";
+}
+
+<div class="container mt-4">
+    <h2>✅ Erasmus Evrak & Görev Takibi</h2>
+
+    <form asp-controller="Tasks" asp-action="AddTask" method="post" class="d-flex mb-4 mt-3">
+        <input type="text" name="title" class="form-control me-2" placeholder="Örn: Learning Agreement İmzalat..." required>
+        <button type="submit" class="btn btn-primary">Görev Ekle</button>
+    </form>
+
+    <ul class="list-group">
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                @item.Title
+                @if (item.IsCompleted)
+                {
+                    <span class="badge bg-success rounded-pill">Tamamlandı</span>
+                }
+                else
+                {
+                    <span class="badge bg-warning rounded-pill text-dark">Bekliyor</span>
+                }
+            </li>
+        }
+    </ul>
+    
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info mt-3">Henüz hiç görev eklemediniz. Yukarıdan ilk görevinizi ekleyin!</div>
+    }
+</div>

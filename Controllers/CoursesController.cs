@@ -3,7 +3,7 @@ using ErasmusMate.Models;
 using System.Linq;
 
 namespace ErasmusMate.Controllers;
-
+// Create, Read, Update, Delete implemented and tested.
 public class CoursesController : Controller
 {
     private readonly AppDbContext _context;
@@ -48,4 +48,5 @@ public class CoursesController : Controller
         }
         return RedirectToAction("Index");
     }
+
 }

@@ -5,32 +5,42 @@
 }
 
 <div class="container mt-4">
-    <h2>✅ Erasmus Evrak & Görev Takibi</h2>
+    <h2>✅ Erasmus Document & Task Tracking</h2>
 
     <form asp-controller="Tasks" asp-action="AddTask" method="post" class="d-flex mb-4 mt-3">
-        <input type="text" name="title" class="form-control me-2" placeholder="Örn: Learning Agreement İmzalat..." required>
-        <button type="submit" class="btn btn-primary">Görev Ekle</button>
+        <input type="text" name="title" class="form-control me-2" placeholder="E.g., Sign the Learning Agreement..." required>
+        <button type="submit" class="btn btn-primary">Add Task</button>
     </form>
 
-    <ul class="list-group">
-        @foreach (var item in Model)
-        {
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+  <ul class="list-group">
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            
+            <span class="@(item.IsCompleted ? "text-decoration-line-through text-muted" : "")">
                 @item.Title
-                @if (item.IsCompleted)
+            </span>
+
+            <div>
+                @if (!item.IsCompleted)
                 {
-                    <span class="badge bg-success rounded-pill">Tamamlandı</span>
+                    <span class="badge bg-warning text-dark">Pending</span>
+                    
+                    <form asp-action="Complete" asp-route-id="@item.Id" method="post" style="display:inline; margin-left:10px;">
+                        <button type="submit" class="btn btn-success btn-sm">✓ Complete</button>
+                    </form>
                 }
                 else
                 {
-                    <span class="badge bg-warning rounded-pill text-dark">Bekliyor</span>
+                    <span class="badge bg-success">Completed</span>
                 }
-            </li>
-        }
-    </ul>
+            </div>
+        </li>
+    }
+</ul>
     
     @if (!Model.Any())
     {
-        <div class="alert alert-info mt-3">Henüz hiç görev eklemediniz. Yukarıdan ilk görevinizi ekleyin!</div>
+        <div class="alert alert-info mt-3">You haven't added any tasks yet.</div>
     }
 </div>

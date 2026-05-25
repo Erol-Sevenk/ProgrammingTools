@@ -28,4 +28,18 @@ public class TasksController : Controller
         }
         return RedirectToAction("Index");
     }
+[HttpPost]
+public async Task<IActionResult> Complete(int id)
+{
+    var task = await _context.ErasmusTasks.FindAsync(id);
+    
+    if (task != null)
+    {
+        task.IsCompleted = true; 
+        
+        await _context.SaveChangesAsync();
+    }
+    
+    return RedirectToAction(nameof(Index));
+}
 }
